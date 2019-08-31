@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int suma (int numeroUno, int numeroDos);
+
+int main()
+{
+int numeroUno;
+int numeroDos;
+int resultadoSuma;
+
+char respuesta;
+
+do
+{
+
+fflush(stdin);
+printf("Presione 0 para ingresar los valores a operar \n");
+printf("Presione 1 para realizar una suma \n");
+printf("Presione 5 para sair \n");
+
+
+scanf("%c", &respuesta);
+
+switch (respuesta)
+{
+    case '0':
+    printf("se toman dos numeros\n");
+
+    fflush(stdin);
+    printf("primer numero: ");
+    scanf("%d", &numeroUno);
+
+    fflush(stdin);
+    printf("segundo numero: ");
+    scanf("%d", &numeroDos);
+
+
+    break;
+
+    case '1':
+    printf("se realiza la suma\n");
+
+    resultadoSuma = suma (numeroUno, numeroDos);
+
+    printf("el resultado de la suma es: %d\n",resultadoSuma);
+    break;
+
+    case '5':
+    printf("saliendo\n");
+    break;
+
+}
+
+}
+while( respuesta !='5');
+
+    return 0;
+}
+
+int suma(int numeroUno, int numeroDos)
+{
+    int resultadoSuma;
+
+    resultadoSuma = numeroUno + numeroDos;
+
+    return resultadoSuma;
+}
